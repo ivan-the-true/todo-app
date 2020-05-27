@@ -11,7 +11,11 @@ $("#todoList").on("click", "span", function(event){
 
 $("#newTodoInput").on("keypress", function(event){
   if (event.which === 13) {
-    $("#todoList").append(`<li class=\"todo-item\"><span>X</span> ${$(this).val()}</li>`);
+    $("#todoList").append(`<li class=\"todo-item\"><span><i class=\"fas fa-trash\"></i></span> ${$(this).val()}</li>`);
     $(this).val("");
   }
+});
+
+$("h1").on("click", "span", function() {
+  $("#newTodoInput").fadeToggle(200)
 });
